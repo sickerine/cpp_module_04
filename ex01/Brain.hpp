@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharrad <mcharrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 08:00:13 by mcharrad          #+#    #+#             */
-/*   Updated: 2023/04/24 08:46:12 by mcharrad         ###   ########.fr       */
+/*   Created: 2023/04/24 08:48:42 by mcharrad          #+#    #+#             */
+/*   Updated: 2023/04/24 08:59:23 by mcharrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 #include <iostream>
 #include <string>
 
-class Animal {
+class Brain {
 	protected:
-		std::string type;
+		std::string ideas[100];
 	public:
-		Animal();
-		Animal(const Animal &copy);
-		virtual ~Animal();
-		Animal &operator=(const Animal &copy);
-		virtual void makeSound() const;
-		std::string getType() const;
+		Brain();
+		Brain(const Brain &copy);
+		~Brain();
+		Brain &operator=(const Brain &copy);
 };

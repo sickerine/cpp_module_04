@@ -1,42 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharrad <mcharrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 08:00:09 by mcharrad          #+#    #+#             */
-/*   Updated: 2023/04/24 08:06:26 by mcharrad         ###   ########.fr       */
+/*   Updated: 2023/04/24 10:34:29 by mcharrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
-Dog::Dog()
+Animal::Animal()
 {
-	type = "Dog";
-	std::cout << "Dog default constructor called" << std::endl;
+	type = "Animal";
+	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &copy) : Animal(copy)
+Animal::Animal(const Animal &copy)
 {
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "Animal copy constructor called" << std::endl;
 	*this = copy;
 }
 
-Dog &Dog::operator=(const Dog & copy)
+Animal &Animal::operator=(const Animal & copy)
 {
-	std::cout << "Dog copy assignent operator called" << std::endl;
+	std::cout << "Animal copy assignent operator called" << std::endl;
 	type = copy.getType();
 	return *this;
 }
 
-Dog::~Dog()
+Animal::~Animal()
 {
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
-void Dog::makeSound() const
+void Animal::makeSound() const
 {
-	std::cout << "Woof" << std::endl;
+	std::cout << "Apeh" << std::endl;
+}
+
+std::string Animal::getType() const
+{
+	return type;
 }

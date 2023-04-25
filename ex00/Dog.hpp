@@ -12,13 +12,13 @@
 
 #pragma once
 
-#include "iostream"
-#include "string"
+#include "Animal.hpp"
 
-class Dog : public Dog {
+class Dog : public Animal {
 	public:
 		Dog();
-		Dog(Dog &copy);
+		Dog(const Dog &copy);
 		~Dog();
-		Dog &operator=(Dog &copy);
-}
+		Dog &operator=(const Dog &copy);
+		void makeSound() const;
+};

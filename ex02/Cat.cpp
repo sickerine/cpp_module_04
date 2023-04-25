@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharrad <mcharrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,33 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog()
+Cat::Cat()
 {
-	type = "Dog";
-	std::cout << "Dog default constructor called" << std::endl;
+	type = "Cat";
+	brain = new Brain();
+	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &copy) : Animal(copy)
+Cat::Cat(const Cat &copy) : Animal(copy)
 {
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "Cat copy constructor called" << std::endl;
 	*this = copy;
 }
 
-Dog &Dog::operator=(const Dog & copy)
+Cat &Cat::operator=(const Cat & copy)
 {
-	std::cout << "Dog copy assignent operator called" << std::endl;
+	std::cout << "Cat copy assignent operator called" << std::endl;
 	type = copy.getType();
+	brain = copy.brain;
 	return *this;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
+	delete brain;
 }
 
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
-	std::cout << "Woof" << std::endl;
+	std::cout << "Meow" << std::endl;
 }

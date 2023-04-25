@@ -14,23 +14,29 @@
 
 Cat::Cat()
 {
+	type = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(Cat &copy)
+Cat::Cat(const Cat &copy) : Animal(copy)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = copy;
 }
 
-Cat &Cat::operator=(Cat & copy)
+Cat &Cat::operator=(const Cat & copy)
 {
 	std::cout << "Cat copy assignent operator called" << std::endl;
-	type = copy.type;
+	type = copy.getType();
 	return *this;
 }
 
 Cat::~Cat()
 {
 	std::cout << "Cat destructor called" << std::endl;
+}
+
+void Cat::makeSound() const
+{
+	std::cout << "Meow" << std::endl;
 }
